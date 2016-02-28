@@ -621,10 +621,10 @@ class AFigure(object):
 
     def auto_limits(self):
         if self.canvas.auto_adjust is True:
-            min_x = 0.
-            max_x = 0.
-            min_y = 0.
-            max_y = 0.
+            min_x = float("inf")
+            max_x = -float("inf")
+            min_y = float("inf")
+            max_y = -float("inf")
             for dk in self.data:
                 ek = dk.extent()
                 min_x = min(min_x, min(ek[:2]))
